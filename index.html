@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee</title>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- SWIPER -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
@@ -15,7 +15,34 @@
 
     <!-- Custom CSS File Link  -->
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Inisialisasi EmailJS
+        (function () {
+            emailjs.init("ezGNNbAqDCGaD6Aa9"); // Ganti "YOUR_USER_ID" dengan User ID dari EmailJS
+        })();
 
+        // Fungsi untuk mengirim email
+        function sendEmail(event) {
+            event.preventDefault(); // Mencegah form reload
+
+            // Ambil data dari input form
+            const params = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value,
+            };
+
+            // Kirim email menggunakan EmailJS
+            emailjs.send("service_exeb3xt", "nasir", params)
+                .then(function (response) {
+                    alert("Email berhasil dikirim!");
+                    console.log("SUCCESS!", response.status, response.text);
+                }, function (error) {
+                    alert("Email gagal dikirim. Silakan coba lagi.");
+                    console.error("FAILED...", error);
+                });
+        }
+    </script>
 </head>
 
 <body>
@@ -68,9 +95,7 @@
 
             <div class="content">
                 <h3 class="title">what's make our coffee special!</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel rerum laboriosam reprehenderit ipsa id
-                    repellat odio illum, voluptas, necessitatibus assumenda adipisci. Hic, maiores iste? Excepturi illo
-                    dolore mollitia qui quia.</p>
+                <p>Kami menggunakan biji kopi pilihan dari perkebunan terbaik, diproses dengan penuh perhatian untuk menciptakan rasa yang autentik dan kaya. Setiap tegukan adalah pengalaman yang istimewa.</p>
                 <a href="#" class="btn">read more</a>
                 <div class="icons-container">
                     <div class="icons">
@@ -98,54 +123,54 @@
             <a href="#" class="box">
                 <img src="image/menu-1.png" alt="">
                 <div class="content">
-                    <h3>our special coffee</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, sed.</p>
-                    <span>$8.99</span>
+                    <h3>Espresso</h3>
+                    <p>Rasa kopi sejati dalam satu tegukan. Pekat, kuat, dan penuh energi.</p>
+                    <span>$15</span>
                 </div>
             </a>
 
             <a href="#" class="box">
                 <img src="image/menu-2.png" alt="">
                 <div class="content">
-                    <h3>our special coffee</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, fugit.</p>
-                    <span>$8.99</span>
+                    <h3>Cappuccino</h3>
+                    <p>Keseimbangan sempurna antara espresso, susu lembut, dan foam tebal di atasnya.</p>
+                    <span>$25</span>
                 </div>
             </a>
 
             <a href="#" class="box">
                 <img src="image/menu-3.png" alt="">
                 <div class="content">
-                    <h3>our special coffee</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, recusandae.</p>
-                    <span>$8.99</span>
+                    <h3>Latte</h3>
+                    <p>Kopi klasik dengan sentuhan creamy, sempurna untuk pecinta rasa lembut.</p>
+                    <span>$28</span>
                 </div>
             </a>
 
             <a href="#" class="box">
                 <img src="image/menu-4.png" alt="">
                 <div class="content">
-                    <h3>our special coffee</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, quas.</p>
-                    <span>$8.99</span>
+                    <h3>Americano</h3>
+                    <p>Kesegaran kopi hitam dengan rasa ringan namun tetap aromatik.</p>
+                    <span>$20   </span>
                 </div>
             </a>
 
             <a href="#" class="box">
                 <img src="image/menu-5.png" alt="">
                 <div class="content">
-                    <h3>our special coffee</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, vitae.</p>
-                    <span>$8.99</span>
+                    <h3>Mocha</h3>
+                    <p>Perpaduan nikmat antara kopi, susu, dan cokelat hangat yang manis.</p>
+                    <span>$30</span>
                 </div>
             </a>
 
             <a href="#" class="box">
                 <img src="image/menu-6.png" alt="">
                 <div class="content">
-                    <h3>our special coffee</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, expedita!</p>
-                    <span>$8.99</span>
+                    <h3>Caramel Macchiato</h3>
+                    <p>Sensasi manis caramel yang berpadu sempurna dengan espresso dan susu lembut.</p>
+                    <span>$32</span>
                 </div>
             </a>
         </div>
@@ -168,8 +193,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, earum quis dolorem quaerat tenetur
-                        illum.</p>
+                    <p>Kopinya benar-benar enak dan terasa otentik! Saya mencoba cappuccino, dan rasanya sangat lembut dengan foam yang sempurna. Pasti akan datang lagi untuk mencicipi menu lainnya!</p>
                     <h3>john deo</h3>
                     <span>satisfied client</span>
                 </div>
@@ -185,8 +209,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum optio quasi ut, illo ipsam
-                        assumenda.</p>
+                    <p>Tempatnya cozy banget! Cocok buat kerja atau sekadar santai sambil menikmati secangkir kopi. Musiknya juga bikin suasana semakin nyaman.</p>
                     <h3>john deo</h3>
                     <span>satisfied client</span>
                 </div>
@@ -202,8 +225,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius asperiores aliquam hic quis!
-                        Eligendi, aliquam.</p>
+                    <p>Pelayanannya ramah banget, baristanya sabar menjelaskan menu dan bahkan memberikan rekomendasi. Pengalaman yang sangat menyenangkan!</p>
                     <h3>john deo</h3>
                     <span>satisfied client</span>
                 </div>
@@ -219,8 +241,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi modi perspiciatis distinctio
-                        velit aliquid a.</p>
+                    <p>Harga kopi di sini sangat terjangkau untuk kualitas yang didapatkan. Value for money banget, apalagi dengan tempat yang nyaman seperti ini.</p>
                     <h3>john deo</h3>
                     <span>satisfied client</span>
                 </div>
@@ -233,12 +254,11 @@
     <section class="book" id="book">
         <h1 class="heading">booking <span>reserve a table</span></h1>
 
-        <form action="">
-            <input type="text" placeholder="Name" class="box">
-            <input type="email" placeholder="Email" class="box">
-            <input type="number" placeholder="Number" class="box">
-            <textarea name="" placeholder="Message" class="box" id="" cols="30" rows="10"></textarea>
-            <input type="submit" value="send message" class="btn">
+        <form onsubmit="sendEmail(event)">
+            <input type="text" id="name" name="name" placeholder="Name & Number" class="box">
+            <input type="email" id="email" name="email" placeholder="Email" class="box">
+            <textarea name="message" placeholder="Message" class="box" id="message" cols="30" rows="10"></textarea>
+            <button type="submit" class="btn">Send Message</button>
         </form>
     </section>
 
